@@ -129,7 +129,7 @@ local function BOISOWY_fake_script() -- Assets.Handle
 	CreateCommand("UnMute", "This command unmute's a player's boombox. ( player name )")
 	CreateCommand("Unpmute", "This command remove a player from the perm muted config ( UserID )")
 	CreateCommand("DupeCheck", "This command will check if any players are using 2+ boomboxes. ( nil )")
-  
+	CreateCommand("Pgui", "This command will give a GUI for removing perm muted users.")  
   
   
 end
