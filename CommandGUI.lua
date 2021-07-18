@@ -128,16 +128,14 @@ local function BOISOWY_fake_script() -- Assets.Handle
   
   
 	
-	CreateCommand("Cmds", "This command will bring up the command documentation GUI.")
-	CreateCommand("Commands", "This command will bring up the command documentation GUI.")
-	CreateCommand("Mute", "This command mute's a player's boombox.")
-	CreateCommand("Stop", "This command will stop a player's audio on a boombox.")
-	CreateCommand("UnMute", "This command unmute's a player's boombox.")
-	CreateCommand("DupeCheck", "This command will check if any players are using 2+ boomboxes.")
-  
-  
-  
-  
+	CreateCommand("Cmds", "This command will bring up the command documentation GUI. ( nil )")
+	CreateCommand("Commands", "This command will bring up the command documentation GUI. ( nil )")
+	CreateCommand("Mute", "This command mute's a player's boombox.( player name )")
+	CreateCommand("Pmute", "This command mute's a player's permamently ( player name ).")
+	CreateCommand("Stop", "This command will stop a player's audio on a boombox. ( player name )")
+	CreateCommand("UnMute", "This command unmute's a player's boombox. ( player name )")
+	CreateCommand("Unpmute", "This command remove a player from the perm muted config ( UserID )")
+	CreateCommand("DupeCheck", "This command will check if any players are using 2+ boomboxes. ( nil )")
   
   
   
