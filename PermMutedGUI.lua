@@ -1,3 +1,9 @@
+for x, y in pairs(game.CoreGui:GetChildren()) do
+   if y.Name == ("CommandS") then
+      y:Destroy()	
+   end
+end
+
 local PermGUI = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local Main_LIST = Instance.new("ScrollingFrame")
@@ -18,7 +24,7 @@ Main.Name = "Main"
 Main.Parent = PermGUI
 Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Main.BorderSizePixel = 0
-Main.Position = UDim2.new(-0.5, 0, 0.264999986, 0)
+Main.Position = UDim2.new(-0.2, 0, 0.264999986, 0)
 Main.Size = UDim2.new(0, 253, 0, 382)
 
 Main_LIST.Name = "Main_LIST"
