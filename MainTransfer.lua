@@ -1,4 +1,4 @@
---[[ VERSION: V 1.5 ]]--
+--[[ VERSION: V 1.6 ]]--
 --[[ CHANGELOG:
   - Made it into a UserId mute!!!
   - Added perm mute commands (!unpmute ( userid ), !pmute (player), !pgui)
