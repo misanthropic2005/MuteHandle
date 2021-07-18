@@ -1,8 +1,3 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
 local CommandS = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local Main_LIST = Instance.new("ScrollingFrame")
@@ -15,10 +10,8 @@ local UIGradient_2 = Instance.new("UIGradient")
 local UIGradient_3 = Instance.new("UIGradient")
 local Close = Instance.new("TextButton")
 
---Properties:
-
 CommandS.Name = "CommandS"
-CommandS.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+CommandS.Parent = game.CoreGui
 CommandS.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Main.Name = "Main"
