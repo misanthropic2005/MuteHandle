@@ -1,3 +1,9 @@
+for x, y in pairs(game.CoreGui:GetChildren()) do
+   if y.Name == ("PermGUI") then
+      y:Destroy()	
+   end
+end
+
 local CommandS = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local Main_LIST = Instance.new("ScrollingFrame")
