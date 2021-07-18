@@ -222,7 +222,7 @@ local function YXASUIL_fake_script() -- Assets.Handle
 	    AddMuted(v, GetUserName); SCF.CanvasSize = SCF.CanvasSize + UDim2.new(0,0,0.05,0)
 	end
 	
-	script.Parent.Parent:TweenPosition(UDim2.new(0, 0, 0.265, 0))
+	script.Parent.Parent:TweenPosition(UDim2.new(0, 0, 0.298, 0))
 end
 coroutine.wrap(YXASUIL_fake_script)()
 local function XNNRVTJ_fake_script() -- Close.Handle 
