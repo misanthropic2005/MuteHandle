@@ -34,7 +34,7 @@ end
 local MuteTarget = function(...)
    
    for z, x in pairs(game:GetService("Players"):GetPlayers()) do
-      if table.find(Muted, x.UserId) then 
+      if table.find(_G.Muted, x.UserId) then 
          Mute(x) 
       end
    end
