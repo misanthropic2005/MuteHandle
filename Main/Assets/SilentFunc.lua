@@ -8,7 +8,6 @@ setreadonly(Meta, false)
 Meta.__namecall = newcclosure(function(self, ...)
     
     local Args = { ... }
-    local Blse = { "!mute", "!unmute", "!pmute", "!unpmute", "!stop", "!dupecheck", "!pgui", "!cmds", "!commands" }
 
     if self.Name == ("SayMessageRequest") then
        
@@ -23,8 +22,8 @@ Meta.__namecall = newcclosure(function(self, ...)
           return wait(9e9)
        end
        
-       for i = 1,#Blse do
-          if Message:find(Blse[i]) then
+       for i = 1,#_G.Commands do
+          if Message:find(_G.Commands[i]) then
              return wait(9e9)
           end
        end
@@ -32,8 +31,6 @@ Meta.__namecall = newcclosure(function(self, ...)
        if RealMessage:sub(1) == ("!") then
           return wait(9e9)
        end
-       
-       print(Message:sub(1), Message:sub(1,4))
        
     end
     
