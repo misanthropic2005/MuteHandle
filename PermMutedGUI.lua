@@ -168,7 +168,7 @@ local function YXASUIL_fake_script() -- Assets.Handle
 	            if table.find(Table, UserId) then
 	                table.remove(Table, table.find(Table, UserId)); writefile(PermUserConfig, (HttpService:JSONEncode(Table)))
 	                NewCommand:Destroy()
-	                game:GetService("Players"):Chat("!unpmute " .. UserName)
+	                game:GetService("Players"):Chat("!unpmute " .. UserId)
 	                wrn(UserName .. " Successfully removed.", 10)
 	            else
 	                wrn("Couldn't find this user in your muted list.", 5)
