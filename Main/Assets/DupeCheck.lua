@@ -72,10 +72,10 @@ local DupeCheck = function()
          SomeoneDuped = true
          notification(v.Name .. " Is Duping!", 5)
       end
-      
-      if not SomeoneDuped then notification("Nobody Is Duping!", 3) end
+     
    end
-
+ 
+   if not SomeoneDuped then notification("Nobody Is Duping!", 3) end
 end
 
 return DupeCheck
