@@ -1,159 +1,259 @@
 for x, y in pairs(game.CoreGui:GetChildren()) do
-   if y.Name == ("CommandS") or y.Name == ("PermGUI") then
+   if y.Name == ("MAG") or y.Name == ("PermGUI") then
       y:Destroy()	
    end
 end
 
-local CommandS = Instance.new("ScreenGui")
+local MAG = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
-local Main_LIST = Instance.new("ScrollingFrame")
-local UIGradient = Instance.new("UIGradient")
-local UIListLayout = Instance.new("UIListLayout")
-local Assets = Instance.new("Folder")
-local Command = Instance.new("TextLabel")
-local Main_TITLE = Instance.new("TextLabel")
-local UIGradient_2 = Instance.new("UIGradient")
-local UIGradient_3 = Instance.new("UIGradient")
-local Close = Instance.new("TextButton")
+local UIC = Instance.new("UICorner")
+local TitleC = Instance.new("TextLabel")
+local TitleA = Instance.new("TextLabel")
+local TitleU = Instance.new("TextLabel")
+local ScrollCAU = Instance.new("ScrollingFrame")
+local UIGridLayout = Instance.new("UIGridLayout")
+local Assert = Instance.new("Folder")
+local CommandName = Instance.new("TextLabel")
+local CommandAlias = Instance.new("TextLabel")
+local CommandView = Instance.new("TextButton")
+local TitleB = Instance.new("TextButton")
+local ViewPage = Instance.new("Frame")
+local UIC_2 = Instance.new("UICorner")
+local CommandTitle = Instance.new("TextLabel")
+local CommandDesc = Instance.new("TextLabel")
+local TitleB_2 = Instance.new("TextButton")
 
-CommandS.Name = "CommandS"
-CommandS.Parent = game.CoreGui
-CommandS.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+--Properties:
+
+MAG.Name = "MAG"
+MAG.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+MAG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Main.Name = "Main"
-Main.Parent = CommandS
-Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.Parent = MAG
+Main.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
 Main.BorderSizePixel = 0
-Main.Position = UDim2.new(-0.5, 0, 0.298000008, 0)
-Main.Size = UDim2.new(0, 253, 0, 382)
+Main.Position = UDim2.new(0.375, 0, 0.349999994, 0)
+Main.Size = UDim2.new(0, 487, 0, 314)
 
-Main_LIST.Name = "Main_LIST"
-Main_LIST.Parent = Main
-Main_LIST.Active = true
-Main_LIST.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Main_LIST.BackgroundTransparency = 1.000
-Main_LIST.BorderSizePixel = 0
-Main_LIST.Size = UDim2.new(0, 253, 0, 382)
-Main_LIST.ScrollBarThickness = 7
+UIC.Name = "UIC"
+UIC.Parent = Main
 
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.00, Color3.fromRGB(251, 255, 254)), ColorSequenceKeypoint.new(0.00, Color3.fromRGB(62, 255, 233)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(158, 255, 173)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-UIGradient.Parent = Main_LIST
+TitleC.Name = "TitleC"
+TitleC.Parent = Main
+TitleC.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+TitleC.BorderSizePixel = 0
+TitleC.Size = UDim2.new(0, 152, 0, 31)
+TitleC.Font = Enum.Font.Sarpanch
+TitleC.Text = "Command:"
+TitleC.TextColor3 = Color3.fromRGB(118, 118, 118)
+TitleC.TextSize = 35.000
+TitleC.TextWrapped = true
 
-UIListLayout.Parent = Main_LIST
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+TitleA.Name = "TitleA"
+TitleA.Parent = Main
+TitleA.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+TitleA.BorderSizePixel = 0
+TitleA.Position = UDim2.new(0.312114984, 0, 0, 0)
+TitleA.Size = UDim2.new(0, 152, 0, 31)
+TitleA.Font = Enum.Font.Sarpanch
+TitleA.Text = "Alias:"
+TitleA.TextColor3 = Color3.fromRGB(118, 118, 118)
+TitleA.TextSize = 35.000
+TitleA.TextWrapped = true
 
-Assets.Name = "Assets"
-Assets.Parent = Main
+TitleU.Name = "TitleU"
+TitleU.Parent = Main
+TitleU.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+TitleU.BorderSizePixel = 0
+TitleU.Position = UDim2.new(0.624229968, 0, 0, 0)
+TitleU.Size = UDim2.new(0, 152, 0, 31)
+TitleU.Font = Enum.Font.Sarpanch
+TitleU.Text = "Usage:"
+TitleU.TextColor3 = Color3.fromRGB(118, 118, 118)
+TitleU.TextSize = 35.000
+TitleU.TextWrapped = true
 
-Command.Name = "Command"
-Command.Parent = Assets
-Command.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Command.BackgroundTransparency = 1.000
-Command.Size = UDim2.new(0, 243, 0, 41)
-Command.Visible = false
-Command.Font = Enum.Font.Sarpanch
-Command.Text = "!Command"
-Command.TextColor3 = Color3.fromRGB(0, 0, 0)
-Command.TextScaled = true
-Command.TextSize = 14.000
-Command.TextWrapped = true
+ScrollCAU.Name = "ScrollCAU"
+ScrollCAU.Parent = Main
+ScrollCAU.Active = true
+ScrollCAU.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollCAU.BackgroundTransparency = 1.000
+ScrollCAU.BorderSizePixel = 0
+ScrollCAU.Position = UDim2.new(0, 0, 0.0987261161, 0)
+ScrollCAU.Size = UDim2.new(0, 456, 0, 283)
+ScrollCAU.ScrollBarThickness = 0
 
-Main_TITLE.Name = "Main_TITLE"
-Main_TITLE.Parent = Main
-Main_TITLE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Main_TITLE.BorderSizePixel = 0
-Main_TITLE.Position = UDim2.new(0, 0, -0.0837696344, 0)
-Main_TITLE.Size = UDim2.new(0, 253, 0, 32)
-Main_TITLE.Font = Enum.Font.Sarpanch
-Main_TITLE.Text = "Commands"
-Main_TITLE.TextColor3 = Color3.fromRGB(85, 85, 255)
-Main_TITLE.TextScaled = true
-Main_TITLE.TextSize = 14.000
-Main_TITLE.TextWrapped = true
+UIGridLayout.Parent = ScrollCAU
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellPadding = UDim2.new(0, 0, 0, 0)
+UIGridLayout.CellSize = UDim2.new(0, 152, 0, 38)
 
-UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 255, 255)), ColorSequenceKeypoint.new(0.42, Color3.fromRGB(156, 150, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 85, 255))}
-UIGradient_2.Parent = Main_TITLE
+Assert.Name = "Assert"
+Assert.Parent = Main
 
-UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 255, 255)), ColorSequenceKeypoint.new(0.42, Color3.fromRGB(156, 150, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 85, 255))}
-UIGradient_3.Parent = Main
+CommandName.Name = "CommandName"
+CommandName.Parent = Assert
+CommandName.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+CommandName.BorderSizePixel = 0
+CommandName.Size = UDim2.new(0, 200, 0, 50)
+CommandName.Visible = false
+CommandName.Font = Enum.Font.Sarpanch
+CommandName.TextColor3 = Color3.fromRGB(102, 102, 102)
+CommandName.TextSize = 35.000
+CommandName.TextWrapped = true
 
-Close.Name = "Close"
-Close.Parent = Main
-Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Close.BackgroundTransparency = 1.000
-Close.Position = UDim2.new(0.873517811, 0, -0.0837696344, 0)
-Close.Size = UDim2.new(0, 32, 0, 32)
-Close.Font = Enum.Font.Sarpanch
-Close.Text = "X"
-Close.TextColor3 = Color3.fromRGB(0, 255, 255)
-Close.TextScaled = true
-Close.TextSize = 14.000
-Close.TextWrapped = true
+CommandAlias.Name = "CommandAlias"
+CommandAlias.Parent = Assert
+CommandAlias.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+CommandAlias.BorderSizePixel = 0
+CommandAlias.Size = UDim2.new(0, 200, 0, 50)
+CommandAlias.Visible = false
+CommandAlias.Font = Enum.Font.Sarpanch
+CommandAlias.TextColor3 = Color3.fromRGB(102, 102, 102)
+CommandAlias.TextSize = 35.000
+CommandAlias.TextWrapped = true
+
+CommandView.Name = "CommandView"
+CommandView.Parent = Assert
+CommandView.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+CommandView.BorderSizePixel = 0
+CommandView.Size = UDim2.new(0, 152, 0, 39)
+CommandView.Visible = false
+CommandView.Font = Enum.Font.Sarpanch
+CommandView.TextColor3 = Color3.fromRGB(102, 102, 102)
+CommandView.TextSize = 35.000
+CommandView.TextWrapped = true
+
+TitleB.Name = "TitleB"
+TitleB.Parent = Main
+TitleB.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+TitleB.BorderSizePixel = 0
+TitleB.Position = UDim2.new(0.936344981, 0, 0, 0)
+TitleB.Size = UDim2.new(0, 31, 0, 31)
+TitleB.Font = Enum.Font.Sarpanch
+TitleB.Text = "X"
+TitleB.TextColor3 = Color3.fromRGB(118, 118, 118)
+TitleB.TextSize = 35.000
+
+ViewPage.Name = "ViewPage"
+ViewPage.Parent = MAG
+ViewPage.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+ViewPage.BorderSizePixel = 0
+ViewPage.Position = UDim2.new(0.375, 0, 0.349999994, 0)
+ViewPage.Size = UDim2.new(0, 487, 0, 154)
+ViewPage.Visible = false
+
+UIC_2.Name = "UIC"
+UIC_2.Parent = ViewPage
+
+CommandTitle.Name = "CommandTitle"
+CommandTitle.Parent = ViewPage
+CommandTitle.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+CommandTitle.BorderSizePixel = 0
+CommandTitle.Size = UDim2.new(0, 487, 0, 31)
+CommandTitle.Font = Enum.Font.Sarpanch
+CommandTitle.Text = "Title"
+CommandTitle.TextColor3 = Color3.fromRGB(118, 118, 118)
+CommandTitle.TextSize = 35.000
+CommandTitle.TextWrapped = true
+
+CommandDesc.Name = "CommandDesc"
+CommandDesc.Parent = ViewPage
+CommandDesc.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+CommandDesc.BorderSizePixel = 0
+CommandDesc.Position = UDim2.new(0.106776178, 0, 0.301935226, 0)
+CommandDesc.Size = UDim2.new(0, 382, 0, 87)
+CommandDesc.Font = Enum.Font.Sarpanch
+CommandDesc.Text = "Desc"
+CommandDesc.TextColor3 = Color3.fromRGB(118, 118, 118)
+CommandDesc.TextSize = 25.000
+CommandDesc.TextWrapped = true
+CommandDesc.TextYAlignment = Enum.TextYAlignment.Top
+
+TitleB_2.Name = "TitleB"
+TitleB_2.Parent = ViewPage
+TitleB_2.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+TitleB_2.BorderSizePixel = 0
+TitleB_2.Position = UDim2.new(0.936344981, 0, 0, 0)
+TitleB_2.Size = UDim2.new(0, 31, 0, 31)
+TitleB_2.Font = Enum.Font.Sarpanch
+TitleB_2.Text = "X"
+TitleB_2.TextColor3 = Color3.fromRGB(118, 118, 118)
+TitleB_2.TextSize = 35.000
 
 -- Scripts:
 
-local function BOISOWY_fake_script() -- Assets.Handle 
-	local script = Instance.new('LocalScript', Assets)
+local function HWQB_fake_script() -- ScrollCAU.UIGridHandler 
+	local script = Instance.new('LocalScript', ScrollCAU)
 
-	local function CreateCommand(Name, Description)
-	    
-	    Name = ("!" .. Name)
-	    
-	    local CommandAsset = script.Parent:WaitForChild("Command")
-	    local CommandList = script.Parent.Parent:WaitForChild("Main_LIST")
-	    local CommandYield = CommandList:WaitForChild("UIListLayout")
-	    local NewCommand = CommandAsset:Clone()
-	    
-	    local ChangeDesc = function()
-	       NewCommand.Text = Description
-	    end
-	    
-	    local ChangeName = function()
-	        NewCommand.Text = Name
-	    end
-	    
-	    NewCommand.MouseEnter:Connect(ChangeDesc)
-	    NewCommand.MouseLeave:Connect(ChangeName)
-	    
-	    NewCommand.Text = Name
-	    NewCommand.Name = Name
-	    NewCommand.Parent = CommandList
-	    NewCommand.Visible = true
-	end
-  
-  
-  
-  
-  
-  
+	local MainGUI = script.Parent.Parent.Parent
+	local MainFrame = script.Parent.Parent
+	local ScrollCAU = script.Parent
+	local AssertCAU = MainFrame:WaitForChild("Assert")
+	local ViewCAU = MainGUI:WaitForChild("ViewPage")
 	
-	CreateCommand("Cmds", "This command will bring up the command documentation GUI. ( nil )")
-	CreateCommand("Commands", "This command will bring up the command documentation GUI. ( nil )")
-	CreateCommand("Mute", "This command mute's a player's boombox.( player name )")
-	CreateCommand("Pmute", "This command mute's a player's permamently ( player name ).")
-	CreateCommand("Stop", "This command will stop a player's audio on a boombox. ( player name )")
-	CreateCommand("UnMute", "This command unmute's a player's boombox. ( player name )")
-	CreateCommand("Unpmute", "This command remove a player from the perm muted config ( UserID )")
-	CreateCommand("DupeCheck", "This command will check if any players are using 2+ boomboxes. ( nil )")
-	CreateCommand("Pgui", "This command will give a GUI for removing perm muted users.")  
-  
-  
+	local SetupView = function(CommandName, CommandDesc)
+	    ViewCAU.CommandTitle.Text = CommandName; ViewCAU.CommandDesc.Text = CommandDesc
+	end
+	
+	local RequireView = function()
+	    MainFrame.Visible = false
+	    ViewCAU.Visible = true
+	end
+	
+	local ViewPage = function(CommandName, CommandDesc)
+	    return function() SetupView(CommandName, CommandDesc); RequireView(); end
+	end
+	
+	local AssertCAUF = function(CmdName, CmdAliasTable, ViewInformation)
+	    
+	    local Name = AssertCAU.CommandName:Clone()
+	    local Alias = AssertCAU.CommandAlias:Clone(); local AliasText;
+	    local View = AssertCAU.CommandView:Clone()
+	    
+	    
+	    if table.concat(CmdAliasTable, ", ") == ("") then
+	       
+	       AliasText = ("N/A")
+	    else
+	       AliasText = table.concat(CmdAliasTable, ", ")
+	    end
+	    
+	    Name.Text = CmdName; Name.Name = CmdName; Name.Parent = ScrollCAU; Name.Visible = true;
+	    Alias.Text = AliasText; Alias.Name = CmdName .. " alias"; Alias.Parent = ScrollCAU; Alias.Visible = true;
+	    View.Text = "View"; View.Parent = ScrollCAU; View.MouseButton1Down:Connect(ViewPage(CmdName, ViewInformation.Description)); View.Visible = true;
+	end
+	
+	for i = 1,#_G.Commands do
+	    AssertCAUF(_G.Commands[i].Name, _G.Commands[i].Alias, _G.Commands[i].View)
+	end
 end
+coroutine.wrap(HWQB_fake_script)()
+local function JNBHRJ_fake_script() -- TitleB.Remove 
+	local script = Instance.new('LocalScript', TitleB)
 
-coroutine.wrap(BOISOWY_fake_script)()
-local function CHKYQ_fake_script() -- Close.TweenOut 
-	local script = Instance.new('LocalScript', Close)
+	local Tween = function()
+	    
+	    local Tween = script.Parent.Parent:TweenPosition(UDim2.new(0.375,0,-1,0))
+	    
+	    repeat wait() until script.Parent.Parent.Position == UDim2.new(0.375,0,-1,0)
+	    script.Parent.Parent.Parent:Destroy();
+	end
+	
+	script.Parent.MouseButton1Down:Connect(Tween)
+end
+coroutine.wrap(JNBHRJ_fake_script)()
+local function NJXCADN_fake_script() -- TitleB_2.Handle 
+	local script = Instance.new('LocalScript', TitleB_2)
 
+	local MainFrame = script.Parent.Parent
+	local MainGUI = MainFrame.Parent
+	local MainCGI = MainGUI:WaitForChild("Main")
+	
 	script.Parent.MouseButton1Down:Connect(function()
-	    local Tween = script.Parent.Parent:TweenPosition(UDim2.new(-0.5, 0, 0.298, 0))
-	    wait(.5)
-	    script.Parent.Parent.Parent:Destroy()
+	    MainFrame.Visible = false
+	    MainCGI.Visible = true
 	end)
 end
-coroutine.wrap(CHKYQ_fake_script)()
-local function MOHWVU_fake_script() -- Main.TweenInto 
-	local script = Instance.new('LocalScript', Main)
-
-	script.Parent:TweenPosition(UDim2.new(0, 0,0.298, 0))
-end
-coroutine.wrap(MOHWVU_fake_script)()
+coroutine.wrap(NJXCADN_fake_script)()
