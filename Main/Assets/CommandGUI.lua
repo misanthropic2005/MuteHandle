@@ -1,11 +1,5 @@
 for x, y in pairs(game.CoreGui:GetChildren()) do
-   if y.Name == ("PermGUI") then
-      y:Destroy()	
-   end
-end
-
-for x, y in pairs(game.CoreGui:GetChildren()) do
-   if y.Name == ("CommandS") then
+   if y.Name == ("CommandS") or y.Name == ("PermGUI") then
       y:Destroy()	
    end
 end
