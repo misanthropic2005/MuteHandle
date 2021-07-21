@@ -5,6 +5,7 @@ end
 local DupeCheck = function()
    local Temp = {  }
    local TempPl = { }
+   local SomeoneDuped = false
    
    for i, v in pairs(game:GetService("Players"):GetPlayers()) do
       Temp[v.Name] = { }
@@ -68,9 +69,11 @@ local DupeCheck = function()
       end
          
       if Found[v.Name] >= 2 or TempPl[v.Name] >= 2 then
+         SomeoneDuped = true
          notification(v.Name .. " Is Duping!", 5)
       end
       
+      if not SomeoneDuped then notification("Nobody Is Duping!", 3) end
    end
 
 end
