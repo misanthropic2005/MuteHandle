@@ -23,7 +23,7 @@ Meta.__namecall = newcclosure(function(self, ...)
        end
        
        for i = 1,#_G.Commands do
-          if Message:find(_G.Commands[i]) then
+          if Message:find("!" .. _G.Commands[i].Name) then
              return wait(9e9)
           end
        end
