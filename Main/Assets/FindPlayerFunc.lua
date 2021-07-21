@@ -41,3 +41,5 @@ function Module.GetPlayer(String)
     end
 	
 end
+
+return Module
