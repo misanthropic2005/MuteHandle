@@ -12,16 +12,13 @@ game:GetService("RunService").Stepped:Connect(function(...)
     end
     
     if _G.ForcePlay and game:GetService("Players").LocalPlayer.Character then
-       if game:GetService("Players").LocalPlayer.Character:FindFirstChild("BoomBox") then
-          for z, x in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
-             if x.Name == ("BoomBox") and x:IsA("Tool") then
-                if x:FindFirstChild("Handle") then
-                   if x.Handle:FindFirstChild("Sound") then
-                      x.Handle.Sound.Playing = true
-                   end
-                end
+       if game:GetService("Players").LocalPlayer.Character then
+          for z, x in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
+             if x:IsA("Sound") and x.Parent.Name ~= "HumanoidRootPart" then
+                x.Playing = true
              end
           end
        end
     end
+        
 end)
