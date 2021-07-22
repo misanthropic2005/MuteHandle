@@ -1,5 +1,5 @@
 for x, y in pairs(game.CoreGui:GetChildren()) do
-   if y.Name == ("MAG") or y.Name == ("PermGUI") then
+   if y.Name == ("MAG") or y.Name == ("PUI") then
       y:Destroy()	
    end
 end
