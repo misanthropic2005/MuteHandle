@@ -26,7 +26,7 @@ local TitleB_2 = Instance.new("TextButton")
 --Properties:
 
 MAG.Name = "MAG"
-MAG.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+MAG.Parent = game.CoreGui
 MAG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Main.Name = "Main"
@@ -257,3 +257,5 @@ local function NJXCADN_fake_script() -- TitleB_2.Handle
 	end)
 end
 coroutine.wrap(NJXCADN_fake_script)()
+
+local Success, Error = pcall(function() syn.protect_gui(MAG) end)
