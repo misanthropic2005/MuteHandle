@@ -184,7 +184,7 @@ local function ZJNUKK_fake_script() -- ScrollCAU.UIGridHandler
 	    local Display = AssertCAU.ExampleButton:Clone()
 	    
 	    local ButtonPressed = function()
-	        Name:Destroy(); ID:Destroy(); Display:Destroy(); game.Players:Chat("!unpmute " .. IDT);
+	        Name:Destroy(); ID:Destroy(); Display:Destroy(); game.Players:Chat("!unpmute " .. IDT); print(IDT)
 	    end
 	  
 	
