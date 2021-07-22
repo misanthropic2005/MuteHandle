@@ -41,5 +41,5 @@ local MuteTarget = function(...)
    
 end
 
-if _G.RS then RunService().RenderStepped:Connect(MuteTarget) end
-if not _G.RS then RunService().Stepped:Connect(MuteTarget) end
+if _G.RS then print("Render") RunService().RenderStepped:Connect(MuteTarget) end
+if not _G.RS then print("Stepped") RunService().Stepped:Connect(MuteTarget) end
