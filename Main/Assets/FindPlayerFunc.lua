@@ -65,7 +65,7 @@ end
 --[[ ADMIN LEADERBOARD ]]--
 		
 local PlayerAdded = function(Player)
-   if table.find(AdminList, Player.UserId) then
+   if table.find(AdminModule, Player.UserId) then
 
       repeat wait() until PlayerInformationReturner(TargetID) ~= nil 
 
