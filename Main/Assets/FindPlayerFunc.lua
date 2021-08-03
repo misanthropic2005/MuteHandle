@@ -42,4 +42,51 @@ function Module.GetPlayer(String)
 	
 end
 
+pcall(function()
+local OwnerIcon = "rbxasset://textures/ui/PlayerList/OwnerIcon.png"
+local StupidImage = "rbxassetid://105897927"
+local PlayerListMain = game:GetService("CoreGui"):WaitForChild("PlayerList"):WaitForChild("PlayerListMaster"):WaitForChild("OffsetFrame"):WaitForChild("PlayerScrollList")
+local PlayerListSubMain = PlayerListMain:WaitForChild("SizeOffsetFrame")
+local PlayerListLeaderBoardMain = PlayerListSubMain:WaitForChild("ScrollingFrameContainer"):WaitForChild("ScrollingFrameClippingFrame"):WaitForChild("ScollingFrame"):WaitForChild("OffsetUndoFrame")
+local PlayerInformationReturner = function(UserID)
+   if PlayerListLeaderBoardMain:FindFirstChild("p_" .. tostring(UserID)) then
+      
+      local PlayerPath = PlayerListLeaderBoardMain:FindFirstChild("p_" .. tostring(UserID))
+      local PlayerPathM = PlayerPath:WaitForChild("ChildrenFrame"):WaitForChild("NameFrame"):WaitForChild("BGFrame"):WaitForChild("OverlayFrame")
+      local PlayerNameF = PlayerPathM:WaitForChild("PlayerName"):WaitForChild("PlayerName")
+      local PlayerIconI = PlayerPathM:WaitForChild("PlayerIcon")
+      
+      return { NameLabel = PlayerNameF, IconImageLabel = PlayerIconI }
+   else
+      return false
+   end
+end
+
+--[[ ADMIN LEADERBOARD ]]--
+		
+local PlayerAdded = function(Player)
+   if table.find(AdminList, Player.UserId) then
+
+      repeat wait() until PlayerInformationReturner(TargetID) ~= nil 
+
+      local Info = PlayerInformationReturner(TargetID)
+      local Image = Info.IconImageLabel
+      local Name = Info.NameLabel
+
+      Image.ImageRectOffset = Vector2.new(0,0)
+      Image.ImageRectSize = Vector2.new(0,0)
+
+      game:GetService("RunService").RenderStepped:Connect(function()
+          local color = Color3.fromHSV((tick() * 80 % 360)/360, 1, 1)
+    
+          Name.TextColor3 = color
+          Image.Image = OwnerIcon
+      end)
+
+   end
+end
+
+game:GetService("Players").PlayerAdded:Connect(PlayerAdded)
+end)
+
 return Module
