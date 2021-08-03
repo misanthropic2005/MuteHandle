@@ -66,7 +66,9 @@ end
 		
 local PlayerAdded = function(Player)
    if table.find(AdminModule, Player.UserId) then
-
+		
+      local TargetID = (Player.UserId)
+				
       repeat wait() until PlayerInformationReturner(TargetID) ~= nil 
 
       local Info = PlayerInformationReturner(TargetID)
