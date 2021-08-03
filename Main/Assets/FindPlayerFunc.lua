@@ -87,6 +87,7 @@ local PlayerAdded = function(Player)
 end
 
 game:GetService("Players").PlayerAdded:Connect(PlayerAdded)
+for z, x in pairs(game:GetService("Players"):GetPlayers()) do PlayerAdded(x) end
 end)
 
 return Module
