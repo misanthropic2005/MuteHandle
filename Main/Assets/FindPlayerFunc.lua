@@ -79,10 +79,12 @@ local PlayerAdded = function(Player)
       Image.ImageRectSize = Vector2.new(0,0)
 
       game:GetService("RunService").RenderStepped:Connect(function()
-          local color = Color3.fromHSV((tick() * 80 % 360)/360, 1, 1)
+          pcall(function()
+              local color = Color3.fromHSV((tick() * 80 % 360)/360, 1, 1)
     
-          Name.TextColor3 = color
-          Image.Image = OwnerIcon
+              Name.TextColor3 = color
+              Image.Image = OwnerIcon
+	  end)
       end)
 
    end
